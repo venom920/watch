@@ -15,6 +15,7 @@ urlpatterns = [
    path('success',views.success,name='success'),
    path('contact',views.contact,name='contact'),
    path('view_contact',views.view_contact,name='view_contact'),
-   path('user_account',views.user_account,name='user_account')
+   path('user_account',views.user_account,name='user_account'),
+   path('hello',views.hello,name='hello')
   
 ]
