@@ -1,0 +1,93 @@
+{% extends 'add_category.html' %}
+
+
+
+{% block content_section %}
+<div class="container">
+    <div class="page-inner">
+      <div class="page-header">
+        <h3 class="fw-bold mb-3">Forms</h3>
+        <ul class="breadcrumbs mb-3">
+          <li class="nav-home">
+            <a href="#">
+              <i class="icon-home"></i>
+            </a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="#">Forms</a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="#">Add Items</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Add Items</div>
+            </div>
+            <form action="{% url 'items' %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 col-lg-4">
+                  <div class="form-group">
+                    <label for="brand">Brand</label>
+                  
+                    <select name="brand" id="" class="form-control">
+                      <option value="">Select Brand</option>
+                      {% for i in brands %}
+                        <option value="{{i.id}}">{{i.category}}</option>
+                      {% endfor %}
+                    </select>
+                    
+                  </div>
+                  <div class="form-group">
+                    <label for="models">Model</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="password"
+                      placeholder="Model"
+                      name="model"
+                    />
+                  </div>
+                 
+                  <div class="form-group ">
+                    <label for="price">Price</label>
+                    <input
+                      type="text"
+                      id="successInput"
+                      value=""
+                      class="form-control"
+                      name="price"
+                    />
+                  </div>
+                
+                  <div class="form-group">
+                    <label for="exampleFormControlFile1"
+                      >Add Image</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control-file"
+                      id="exampleFormControlFile1"
+                      name="item_image"
+                    />
+                  </div>
+                  
+                  </div>
+                </div>
+                <div class="card-action">
+                  <button class="btn btn-success" type="submit">Submit</button>
+                  
+                </div>
+              </form>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'cart.html' %}
+
+
+{% block content_details %}
+
+
+<section style="margin-top: 90px;">
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Products</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                    {% for i in data %}
+                    <tr>
+                        <th scope="row">
+                            <div class="d-flex align-items-center">
+                                <img src="{{ i.cart_product.brand.item_image.url }}" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
+                            </div>
+                        </th>
+                        <td>
+                            <p class="mb-0 mt-4">{{ i.cart_product.brand.item_model }}</p>
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4">{{ i.cart_product.brand.price }}</p>
+                        </td>
+                        <td>
+                            <div class="input-group quantity mt-4" style="width: 100px;">
+                                
+                                <input type="text" class="form-control form-control-sm text-center border-0" value="1">
+                                
+                            </div>
+                        </td>
+
+                        
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+      
+    </div>
+</div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'add_category.html' %}
+
+{% block content_section %}
+
+<div class="container">
+    <div class="page-inner">
+      <div class="page-header">
+        <h3 class="fw-bold mb-3">DataTables.Net</h3>
+        <ul class="breadcrumbs mb-3">
+          <li class="nav-home">
+            <a href="#">
+              <i class="icon-home"></i>
+            </a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="#">Tables</a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="#">Datatables</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Basic</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  id="basic-datatables"
+                  class="display table table-striped table-hover"
+                >
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Model</th>
+                      <th>Price</th>
+                      <th>Image</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    {% for i in item   %}
+                   
+                    <tr>
+                      <td>{{i.brand.category}}</td>
+                      <td>{{i.item_model}}</td>
+                      <td>{{i.price}}</td>
+                      <td><img src="{{i.item_image.url}}" alt="" width="100px" height="100px"></td>
+                      <td><a href=""><button class="btn btn-success">Edit</button></a></td>
+                      <td><a href=""><button class="btn btn-danger">Delete</button></a></td>
+                    </tr>
+
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
