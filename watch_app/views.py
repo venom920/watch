@@ -68,7 +68,7 @@ def login(request):
             request.session['u_email'] = uemail
             return redirect('main')
         
-        elif uemail == 'watchadmin123@gamil.com' and password == 'watchadmin':
+        elif uemail == 'watchadmin123@gmail.com' and password == 'watchadmin':
             return redirect('category')
         
 
