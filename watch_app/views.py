@@ -181,5 +181,3 @@ def user_account(request):
     }
     return render(request, "userinfo.html", context) 
 
-def hello(request):
-    return render(request,"userinfo.html")
